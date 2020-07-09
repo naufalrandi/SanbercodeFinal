@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('desc');
-            $table->integer('tag_id')->unsigned();
+            $table->integer('tag_id')->unsigned()->nullable();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });

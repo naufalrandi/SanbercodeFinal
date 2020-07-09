@@ -19,4 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', function () {
+        return view('index');
+    })->name('dashboard');
+    Route::resource('question', 'QuestionController');
+    Route::resource('answer', 'AnswerController');
+    Route::resource('tag', 'TagController');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');

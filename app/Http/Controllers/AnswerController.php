@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use Illuminate\Http\Request;
 
 class AnswerController extends Controller
@@ -34,7 +35,16 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'desc'=>'required',
+        ]);
+
+        $input = $request->all();
+        $input['user_id'] = auth()->user()->id;
+
+        Answer::create($input);
+
+        return back();
     }
 
     /**
