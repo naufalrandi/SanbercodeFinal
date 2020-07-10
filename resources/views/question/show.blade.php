@@ -2,31 +2,25 @@
 @section('title', 'Tanya Jawab')
 
 @section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Tanya Jawab</h3>
-            </div>
-            <div class="card-body">
-                  <b style="font-size: 20px;">{{ $question->title }}</b>
-                  <br>
-                  {!! $question->desc !!}
-                  <br>
+    <div class="container px-3 py-4">
+        <div class="media mx-5 my-5">
+            <div class="media-body">
+                <h5 class="mt-0" style="font-weight: bold;">Pertanyaan</h5>
+                <h5 class="mt-0 header-judul">{{ $question->title }}</h5>
+                <p class="px-5">{!! $question->desc !!}</p>
+                <em>{{$question->created_at->diffForHumans()}}</em><br>
+                @foreach ($tag as $tag)
+                      <button class="btn btn-link"> {{$tag->title}} </button>
+                @endforeach
 
-                  <label for="">Tag :</label>
-                  @foreach ($tag as $tag)
-                      <button class="btn btn-primary"> {{$tag->title}} </button>
-                  @endforeach
-                  <br>
+                <div class="media mt-5">
+                    <a class="mr-5" href="#"></a>
+                <div class="media-body">
+                    <h5 class="mt-0 header-jawaban">Jawaban</h5>
 
-                  {{$question->created_at->diffForHumans()}}
-                  <hr/>
-                    <b>Display Comments</b>
-
-                    @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id])
-
-                    <hr />
-                    <b>Add comment</b>
+                @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id])
+                <hr/>
+                <b>Add comment</b>
                     <form method="post" action="{{ route('answer.store') }}">
                         @csrf
                         <div class="form-group">
@@ -39,7 +33,8 @@
                         </div>
                     </form>
                   <hr/>
-
+                </div>
+                </div>
             </div>
         </div>
     </div>

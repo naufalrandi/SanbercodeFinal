@@ -49,7 +49,7 @@ class QuestionController extends Controller
         $question = Question::create($input);
         $question->tag_id = Tag::get('id');
 
-        return redirect()->route('question.index')
+        return redirect()->route('question.question')
             ->with('success', 'question dibuat');
     }
 
