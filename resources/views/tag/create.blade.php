@@ -12,17 +12,17 @@
         </ul>
     </div>
     @endif
-    <div class="container">
+    <div class="container" style="margin-top: 80px;">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Tag</h3>
+                <h3 class="card-title">Tambahkan Tag</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('tag.store') }}" method="POST">
                     @csrf
-                    <label for="title"> Judul</label>
-                    <input type="text" class="form-control" name="title" id="title" placeholder="Tulis judul disini">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <label for="title"> Tag</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Tulis tag disini">
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
             </div>
         </div>

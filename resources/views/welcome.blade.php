@@ -1,100 +1,117 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('partials.master')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+@section('content')
+<!-- carousel -->
+      <div class="site-section-cover overlay img-bg-section" style="background-image: url(../template/images/bg2.png);" >
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-12 col-lg-7">
+              <h1 data-aos="fade-up" data-aos-delay="">STRIKE OVER</h1>  
+              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, cumque vitae animi.</p>
+              <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-outline-white border-w-2 btn-md">LOGIN</a></p>
             </div>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+    <!-- end carousel -->
+    
+
+    <!-- section1 -->
+    <div class="site-section">
+      <div class="block__73694 mb-2" id="services-section">
+        <div class="container">
+          <div class="row d-flex no-gutters align-items-stretch">
+
+            <div class="col-12 col-lg-7 block__73422" style="background-image: url(../template/images/logo-bower.png);" data-aos="fade-right" data-aos-delay="">
+            </div>
+
+            <div class="col-lg-5 ml-auto p-lg-5 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="">
+              <h2 class="mb-3 text-black">Tentang Stike Over</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus id dignissimos nemo minus perspiciatis ullam itaque voluptas iure vero, nesciunt unde odit aspernatur distinctio, maiores facere officiis. Cum, esse, iusto?</p>
+
+              <p>Minus perspiciatis ullam itaque voluptas iure vero, nesciunt unde odit aspernatur distinctio, maiores facere officiis. Cum, esse, iusto?</p>
+
+              <ul class="ul-check primary list-unstyled mt-5">
+                <li>Lorem ipsum dolor.</li>
+                <li>Quod, amet. Provident.</li>
+                <li>Quo, adipisci, quis.</li>
+                <li>Cumque perspiciatis, blanditiis?</li>
+              </ul>              
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
+    <!-- end section1 -->
+
+    <!-- our fitur -->
+    <section class="site-section bg-light" id="pricing-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center">
+          <div class="col-md-7">
+            <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
+              <h2>FITUR</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quae temporibus tenetur vitae iusto suscipit alias, laudantium, porro unde tempora.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="">
+            <div class="pricing">
+              <h3 class="text-center text-black mb-3">Tanya Pribadi</h3>
+              <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
+              <ul class="list-unstyled ul-check success mb-5">
+                
+                <li>Officia quaerat eaque neque</li>
+                <li>Possimus aut consequuntur incidunt</li>
+                <li class="remove">Lorem ipsum dolor sit amet</li>
+                <li class="remove">Consectetur adipisicing elit</li>
+                <li class="remove">Dolorum esse odio quas architecto sint</li>
+              </ul>
+              <p class="text-center">
+                <a href="#" class="btn btn-secondary btn-md">Masuk</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing">
+              <h3 class="text-center text-black mb-3">Tanya Publik</h3>
+              <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
+              <ul class="list-unstyled ul-check success mb-5">
+                
+                <li>Officia quaerat eaque neque</li>
+                <li>Possimus aut consequuntur incidunt</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipisicing elit</li>
+                <li class="remove">Dolorum esse odio quas architecto sint</li>
+              </ul>
+              <p class="text-center">
+                <a href="#" class="btn btn-primary btn-md text-white">Masuk</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing">
+              <h3 class="text-center text-black mb-3">List Pertanyaan</h3>
+              <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
+              <ul class="list-unstyled ul-check success mb-5">
+                
+                <li>Officia quaerat eaque neque</li>
+                <li>Possimus aut consequuntur incidunt</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipisicing elit</li>
+                <li>Dolorum esse odio quas architecto sint</li>
+              </ul>
+              <p class="text-center">
+                <a href="#" class="btn btn-secondary btn-md">Masuk</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+@include('partials.footer')
+@endsection

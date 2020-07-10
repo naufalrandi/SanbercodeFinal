@@ -4,7 +4,7 @@
 @section('content')
 @if (count($errors) > 0)
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Whoops!</strong> Sesuatu ada yang salah pada inputanmu<br><br>
         <ul>
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -12,10 +12,10 @@
         </ul>
     </div>
     @endif
-    <div class="container">
+    <div class="container" style="margin-top: 80px; margin-bottom: 120px;">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Question</h3>
+                <h3 class="card-title">Buat Pertanyaan</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('question.store') }}" method="POST">
@@ -25,7 +25,7 @@
                     <label for="isi">Isi</label>
                     <div class="mb-3" id="isi">
                         <textarea class="textarea" placeholder="Tulis pertanyaan disini" name="desc"
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                style="width: 100%; height: 200px; font-size: 14px; line-height: 38px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Multiple</label>

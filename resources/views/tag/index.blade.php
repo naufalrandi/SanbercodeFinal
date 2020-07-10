@@ -2,8 +2,10 @@
 @section('title', 'Tag')
 
 @section('content')
-    <div class="container">
-        <div class="card">
+    <div class="container" style="margin-top: 80px;">
+    <a href="/tag/create">
+    <button type="submit" class="btn btn-primary button-right">Tambah Tag</button></a><hr style="margin-top: 50px;">
+        <div class="card mt-5">
             <div class="card-header">
                 <h3 class="card-title">Tag</h3>
             </div>
