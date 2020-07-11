@@ -19,7 +19,7 @@
                 <div class="media-body">
                     <h5 class="mt-0 header-jawaban">Jawaban</h5>
 
-                @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id, 'reply' => !empty($answer->replies) ? $answer->replies:'' , 'answer_id' => !empty($answer->id) ? $answer->id:''])
+                @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id, 'replies' => !empty($answer->replies) ? $answer->replies:'' , 'answer_id' => !empty($answer->id) ? $answer->id:'', 'reply_id' => !empty($replys) ? $replies:''])
                 <hr/>
                 <b>Add comment</b>
                     <form method="post" action="{{ route('answer.store') }}">

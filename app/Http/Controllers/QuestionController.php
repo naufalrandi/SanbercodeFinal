@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use App\Question;
+use App\Reply;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +66,7 @@ class QuestionController extends Controller
     {
         $question = Question::find($id);
         $answer = Answer::find($id);
+        $replys = Reply::find($id);
         $tag = Tag::all();
         return view('question.show', compact('question','tag', 'answer'));
     }

@@ -6,12 +6,13 @@
 
             <div class="container">
                 <h5 class="mt-0 header-jawaban">Komentar</h5>
-                @foreach ($reply as $reply)
-                    <b>{{ $reply->user->name }}</b>
-                    <div class="container">
-                        {!! $reply->desc !!}
-                    </div>
-                @endforeach
+                    @foreach ($replies as $reply)
+                        <b>{{ !empty($reply->user->name) ? $reply->user->name:'' }}</b>
+                        <div class="container">
+                            {!! !empty($reply->desc) ? $reply->desc:'' !!}
+                        </div>
+                    @endforeach
+
 
                 <hr>
                 <b>Add reply</b>
@@ -20,7 +21,7 @@
                     @csrf
                     <div class="form-group">
                         <input type="text" name="desc" class="form-control" />
-                        <input type="hidden" name="answer_id" value="{{ $question_id }}" />
+                        <input type="hidden" name="answer_id" value="{{ $answer->id }}" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-warning" value="Reply" />
