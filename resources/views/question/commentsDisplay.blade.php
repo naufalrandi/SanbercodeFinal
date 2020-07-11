@@ -15,6 +15,7 @@
                         @endif
                     @endforeach
                 <hr>
+
                 <b>Add reply</b>
                 <a href="" id="reply"></a>
                 <form method="post" action="{{ route('reply.store') }}">
