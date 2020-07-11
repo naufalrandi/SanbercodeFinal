@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-12 col-lg-7">
-              <h1 data-aos="fade-up" data-aos-delay="">STRIKE OVER</h1>  
+              <h1 data-aos="fade-up" data-aos-delay="">STRIKE OVER</h1>
               <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, cumque vitae animi.</p>
               <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-outline-white border-w-2 btn-md">LOGIN</a></p>
             </div>
@@ -14,7 +14,7 @@
         </div>
       </div>
     <!-- end carousel -->
-    
+
 
     <!-- section1 -->
     <div class="site-section">
@@ -36,10 +36,10 @@
                 <li>Quod, amet. Provident.</li>
                 <li>Quo, adipisci, quis.</li>
                 <li>Cumque perspiciatis, blanditiis?</li>
-              </ul>              
+              </ul>
             </div>
           </div>
-        </div>      
+        </div>
       </div>
     </div>
     <!-- end section1 -->
@@ -61,7 +61,7 @@
               <h3 class="text-center text-black mb-3">Tanya Pribadi</h3>
               <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
               <ul class="list-unstyled ul-check success mb-5">
-                
+
                 <li>Officia quaerat eaque neque</li>
                 <li>Possimus aut consequuntur incidunt</li>
                 <li class="remove">Lorem ipsum dolor sit amet</li>
@@ -79,7 +79,7 @@
               <h3 class="text-center text-black mb-3">Tanya Publik</h3>
               <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
               <ul class="list-unstyled ul-check success mb-5">
-                
+
                 <li>Officia quaerat eaque neque</li>
                 <li>Possimus aut consequuntur incidunt</li>
                 <li>Lorem ipsum dolor sit amet</li>
@@ -97,7 +97,7 @@
               <h3 class="text-center text-black mb-3">List Pertanyaan</h3>
               <p class="text-center" style="font-weight: bold;">Manfaat yang didapat</p>
               <ul class="list-unstyled ul-check success mb-5">
-                
+
                 <li>Officia quaerat eaque neque</li>
                 <li>Possimus aut consequuntur incidunt</li>
                 <li>Lorem ipsum dolor sit amet</li>
@@ -112,6 +112,6 @@
         </div>
       </div>
     </section>
-    
-@include('partials.footer')
-@endsection
+
+    @endsection
+    @include('partials.footer')

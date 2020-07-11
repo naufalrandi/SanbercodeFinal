@@ -9,6 +9,7 @@
                 <h5 class="mt-0 header-judul">{{ $question->title }}</h5>
                 <p class="px-5">{!! $question->desc !!}</p>
                 <em>{{$question->created_at->diffForHumans()}}</em><br>
+                <label for="">Tag : </label>
                 @foreach ($tag as $tag)
                       <button class="btn btn-link"> {{$tag->title}} </button>
                 @endforeach

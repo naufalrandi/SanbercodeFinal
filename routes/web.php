@@ -18,13 +18,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', function () {
         return view('index');
     })->name('dashboard');
-    Route::resource('question', 'QuestionController');
-    Route::resource('answer', 'AnswerController');
-    Route::resource('tag', 'TagController');
+    Route::resource('question', 'QuestionController',['except' => ['index', 'show']]);
+    Route::resource('answer', 'AnswerController',['only' => ['store']]);
+    Route::resource('tag', 'TagController',['except' => ['index']]);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/question', 'QuestionController@index')->name('question.index');
+Route::get('/question/{question}', 'QuestionController@show')->name('question.show');
+Route::get('/tag', 'TagController@index')->name('tag.index');

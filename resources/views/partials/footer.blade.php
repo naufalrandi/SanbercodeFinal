@@ -18,8 +18,27 @@
   <script src="{{asset('/template/js/jquery.fancybox.min.js')}}"></script>
   <script src="{{asset('/template/js/jquery.easing.1.3.js')}}"></script>
   <script src="{{asset('/template/js/aos.js')}}"></script>
-  
+
   <script src="{{asset('/template/js/main.js')}}"></script>
-    
+
+  <!-- Select2 -->
+  <script src="../../plugins/select2/js/select2.full.min.js"></script>
+
+<!-- Summernote -->
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<script>
+    $(function () {
+        // Summernote
+        $('.textarea').summernote()
+
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+        theme: 'bootstrap4'
+        })
+    })
+  </script>
   </body>
 </html>

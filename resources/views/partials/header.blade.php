@@ -22,10 +22,15 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('/template/css/style.css')}}">
-    
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">  
-  
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
   <!--humburger toggle-->
   <div class="site-wrap"  id="home-section">
     <div class="site-mobile-menu site-navbar-target">
@@ -41,12 +46,12 @@
     <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
       <div class="container">
         <div class="row align-items-center position-relative">
-          
-            
+
+
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary">STRIKE OVER</a>
+              <a href="/" class="text-black"><span class="text-primary">STRIKE OVER</a>
             </div>
-            
+
             <div class="col-12">
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
@@ -54,6 +59,31 @@
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/question" class="nav-link">Pertanyaan</a></li>
                 <li><a href="/tag" class="nav-link">Tags</a></li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item ">
+                        <a class="nav-link">{{ Auth::user()->name }}</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @endguest
               </ul>
               </nav>
             </div>
@@ -61,6 +91,6 @@
           <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
         </div>
-      </div>   
+      </div>
     </header>
     <!-- end navbar -->

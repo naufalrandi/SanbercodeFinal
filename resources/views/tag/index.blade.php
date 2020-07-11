@@ -15,7 +15,9 @@
                       <tr>
                         <th>No</th>
                         <th>Name</th>
-                        <th>Options</th>
+                        @auth
+                            <th>Options</th>
+                        @endauth
                       </tr>
 
                       @foreach ($data as $key => $tag)
@@ -26,14 +28,15 @@
                         <td>{{ $tag->title }}
                       </td>
                       <td>
-                          <div class="table-links">
-                              <form action="{{ route('tag.destroy', $tag->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                              </form>
-
+                          @auth
+                            <div class="table-links">
+                                <form action="{{ route('tag.destroy', $tag->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                </form>
                             </div>
+                          @endauth
                       </td>
                   </tr>
                   @endforeach

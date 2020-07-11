@@ -17,7 +17,8 @@ class QuestionController extends Controller
     public function index()
     {
         $data = Question::all();
-        return view('question.index', compact('data'));
+        $user = Auth::user();
+        return view('question.index', compact('data','user'));
     }
 
     /**
@@ -49,7 +50,7 @@ class QuestionController extends Controller
         $question = Question::create($input);
         $question->tag_id = Tag::get('id');
 
-        return redirect()->route('question.question')
+        return redirect()->route('question.index')
             ->with('success', 'question dibuat');
     }
 
