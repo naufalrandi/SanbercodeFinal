@@ -7,13 +7,13 @@
             <div class="container">
                 <h5 class="mt-0 header-jawaban">Komentar</h5>
                     @foreach ($replies as $reply)
-                        <b>{{ !empty($reply->user->name) ? $reply->user->name:'' }}</b>
-                        <div class="container">
-                            {!! !empty($reply->desc) ? $reply->desc:'' !!}
-                        </div>
+                        @if ($reply->answer_id == $answer->id)
+                            <b>{{ !empty($reply->user->name) ? $reply->user->name:'' }}</b>
+                            <div class="container">
+                                {!! !empty($reply->desc) ? $reply->desc:'' !!}
+                            </div>
+                        @endif
                     @endforeach
-
-
                 <hr>
                 <b>Add reply</b>
                 <a href="" id="reply"></a>
