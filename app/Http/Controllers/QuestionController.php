@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Question;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -63,8 +64,9 @@ class QuestionController extends Controller
     public function show($id)
     {
         $question = Question::find($id);
+        $answer = Answer::with('reply')->get();
         $tag = Tag::all();
-        return view('question.show', compact('question','tag'));
+        return view('question.show', compact('question','tag', 'answer'));
     }
 
     /**

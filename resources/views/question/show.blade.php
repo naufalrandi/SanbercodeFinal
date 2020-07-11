@@ -19,7 +19,7 @@
                 <div class="media-body">
                     <h5 class="mt-0 header-jawaban">Jawaban</h5>
 
-                @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id])
+                @include('question.commentsDisplay', ['answer' => $question->answer, 'question_id' => $question->id, 'reply' => $answer->replies, 'answer_id' => $answer->id])
                 <hr/>
                 <b>Add comment</b>
                     <form method="post" action="{{ route('answer.store') }}">

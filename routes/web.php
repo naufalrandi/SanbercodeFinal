@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('dashboard');
     Route::resource('question', 'QuestionController',['except' => ['index', 'show']]);
     Route::resource('answer', 'AnswerController',['only' => ['store']]);
+    Route::resource('reply', 'ReplyController',['only' => ['store']]);
     Route::resource('tag', 'TagController',['except' => ['index']]);
 });
 
