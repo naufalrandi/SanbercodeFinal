@@ -64,7 +64,7 @@ class QuestionController extends Controller
     public function show($id)
     {
         $question = Question::find($id);
-        $answer = Answer::with('reply')->get();
+        $answer = Answer::find($id);
         $tag = Tag::all();
         return view('question.show', compact('question','tag', 'answer'));
     }
