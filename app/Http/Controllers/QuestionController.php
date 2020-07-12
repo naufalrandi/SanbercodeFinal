@@ -79,11 +79,12 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
+        $tags = Tag::all();
         $question = Question::find($id);
         $user = Auth::user();
 
         if ($user->id === $question->user_id) {
-            return view('question.edit', compact('question'));
+            return view('question.edit', compact('question', 'user', 'tags'));
         }
     }
 
@@ -98,11 +99,12 @@ class QuestionController extends Controller
     {
 
         $this->validate($request, [
-            'judul' => 'required',
-            'isi' => 'required'
+            'title' => 'required',
+            'desc' => 'required'
         ]);
         $input = $request->all();
         $question = Question::find($id);
+        $question->tag_id = Tag::all();
         $question->update($input);
 
         return redirect()->route('question.index')

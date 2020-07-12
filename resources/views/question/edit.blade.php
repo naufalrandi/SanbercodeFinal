@@ -18,16 +18,27 @@
                 <h3 class="card-title">Edit Pertanyaan</h3>
             </div>
             <div class="card-body">
-                {!! Form::model($pertanyaan, ['method' => 'PATCH','route' => ['pertanyaan.update', $pertanyaan->id]]) !!}
+                {!! Form::model($question, ['method' => 'PATCH','route' => ['question.update', $question->id]]) !!}
                     @csrf
-                    <label for="judul"> Judul</label>
-                    {!! Form::text('judul', null, array('placeholder' => 'judul','class' => 'form-control')) !!}
-                    <label for="isi">Isi</label>
-                    <div class="mb-3" id="isi">
-                        {!! Form::textarea('isi', null, array('placeholder' => 'isi','class' => 'form-control')) !!}
+                    <label for="title"> Judul</label>
+                    {!! Form::text('title', null, array('placeholder' => 'title','class' => 'form-control')) !!}
+                    <label for="desc">Isi</label>
+                    <div class="mb-3" id="desc">
+                        <textarea class="textarea" placeholder="Tulis pertanyaan disini" name="desc"
+                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"> {{$question->desc}} </textarea>
                     </div>
+                    <div class="form-group">
+                        <label>Multiple</label>
+                        <select class="select2bs4" multiple="multiple" data-placeholder="Select a tag"
+                                style="width: 40%;" name="tag_id" valuue=" {{$question->tag_id}} ">
+                                @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                            @endforeach
+                        </select>
+                      </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <br><br>
             </div>
         </div>
     </div>
